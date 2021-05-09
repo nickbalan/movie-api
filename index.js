@@ -69,12 +69,6 @@ app.get('/', (req, res) => {
 	res.send('Welcome to the movie-API');
 });
 
-//Uses Express.static to serve your “documentation.html” file
-app.use('/public', express.static('public'));
-app.get('/documentation', (req, res) => {
-	res.sendFile('/public/documentation.html', {root: __dirname});
-});
-
 //Implements Express.static to serve the “documentation.html” file
 app.use('/public', express.static('public'));
 app.get('/documentation', (req, res) => {
