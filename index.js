@@ -75,6 +75,11 @@ app.get('/documentation', (req, res) => {
 	res.sendFile('/public/documentation.html', {root: __dirname});
 });
 
+/* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021).*/
+app.get('/movie', (req, res) => {
+	res.json(WorldwideBoxOffice);
+});
+
 //Listens for requests on port 8080
 app.listen(8080, () => {
 	console.log('This app is listening on port 8080.');
