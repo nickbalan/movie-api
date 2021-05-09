@@ -51,6 +51,19 @@ let WorldwideBoxOffice = [
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
+//Implements Error Handling in Express
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+
+app.use(bodyParser.json());
+app.use(methodOverride());
+
+app.use((err, reg, res, next) => {
+	console.error(err.stack);
+	res.status(500).send('Error!')
+});
+
 //Listens for requests on port 8080
 app.listen(8080, () => {
 	console.log('This app is listening on port 8080.');
