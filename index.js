@@ -48,6 +48,9 @@ let WorldwideBoxOffice = [
 	}
 ];
 
+//Implements the Logs with Morgan in Express
+app.use(morgan('common'));
+
 //Listens for requests on port 8080
 app.listen(8080, () => {
 	console.log('This app is listening on port 8080.');
