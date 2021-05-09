@@ -64,6 +64,11 @@ app.use((err, reg, res, next) => {
 	res.status(500).send('Error!')
 });
 
+// Adds a GET route located at the endpoint “/” that returns a default textual response
+app.get('/', (req, res) => {
+	res.send('Welcome to the movie-API');
+});
+
 //Listens for requests on port 8080
 app.listen(8080, () => {
 	console.log('This app is listening on port 8080.');
