@@ -69,6 +69,18 @@ app.get('/', (req, res) => {
 	res.send('Welcome to the movie-API');
 });
 
+//Uses Express.static to serve your “documentation.html” file
+app.use('/public', express.static('public'));
+app.get('/documentation', (req, res) => {
+	res.sendFile('/public/documentation.html', {root: __dirname});
+});
+
+//Implements Express.static to serve the “documentation.html” file
+app.use('/public', express.static('public'));
+app.get('/documentation', (req, res) => {
+	res.sendFile('/public/documentation.html', {root: __dirname});
+});
+
 //Listens for requests on port 8080
 app.listen(8080, () => {
 	console.log('This app is listening on port 8080.');
