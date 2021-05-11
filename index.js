@@ -57,7 +57,7 @@ app.get('/', (req, res) => {
 app.use(/'express.static('public'));
 
 /* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021).*/
-app.get('/movie', (req, res) => {
+app.get('/movies', (req, res) => {
 	res.json(WorldwideBoxOffice);
 });
 
@@ -72,7 +72,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-app.use((err, reg, res, next) => {
+app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).send('Error!')
 });
