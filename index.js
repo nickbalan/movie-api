@@ -50,11 +50,11 @@ let WorldwideBoxOffice = [
 
 // Adds a GET route located at the endpoint “/” that returns a default textual response
 app.get('/', (req, res) => {
-	res.send('Welcome to the movie-API');
+	res.send('Welcome to the movies-API');
 });
 
 //Implements Express.static to serve the “documentation.html” file
-app.use(/'express.static('public'));
+app.use(express.static('public'));
 
 /* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021).*/
 app.get('/movies', (req, res) => {
