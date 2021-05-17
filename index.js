@@ -8,42 +8,62 @@ const bodyParser = require('body-parser');
 // Adds an arry with the list of Top 10 Worldwide Box Office (2021)
 let WorldwideBoxOffice = [
 	{
+		id: 1,
+		ratings: 7,
 		title:'Hi, Mom',
 		director:'Jia Ling'
 	},
 	{
+		id: 2,
+		ratings: 7,
 		title:'Detective Chinatown 3',
 		director:'Chen Sicheng'
 	},
 	{
+		id: 3,
+		ratings: 7,
 		title:'Godzilla vs. Kong',
 		director:'Adam Wingard'
 	},
 	{
+		id: 4,
+		ratings: 7,
 		title:'A Writers Odyssey',
 		director:'Lu Yang'
 	},
 	{
+		id: 5,
+		ratings: 7,
 		title:'Sister',
 		director:'Ruoxin Yin'
 	},
 	{
+		id: 6,
+		ratings: 7,
 		title:'Tom and Jerry',
 		director:'William Hanna'
 	},
 	{
+		id: 7,
+		ratings: 7,
 		title:'Raya and the Last Dragon',
 		director:'Don Hall'
 	},
 	{
+		id: 8,
+		ratings: 7,
 		title:'Endgame',
 		director:'Anthony Russo'
 	},
 	{
+		id: 9,
+		ratings: 7,
 		title:'Boonie Bears: The Wild Life',
 		director:'Leon Ding'
 	},
 	{
+		id: 10,
+		ratings: 7,
 		title:'Evangelion: 3.0+1.0 Thrice Upon a Time',
 		director:'Hideaki Anno'
 	}
