@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 	methodOverride = require('method-override');
+	uuid = require('uuid');
 
 // Adds an arry with the list of Top 10 Worldwide Box Office (2021)
 let WorldwideBoxOffice = [
