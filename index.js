@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 	uuid = require('uuid');
 
 // Adds an arry with the list of Top 10 Worldwide Box Office (2021)
-let WorldwideBoxOffice = [
+let movies = [
 	{
 		id: 1,
 		ratings: 7,
@@ -77,9 +77,9 @@ app.get('/', (req, res) => {
 //Implements Express.static to serve the “documentation.html” file
 app.use(express.static('public'));
 
-/* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021).*/
+/* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021) */
 app.get('/movies', (req, res) => {
-	res.json(WorldwideBoxOffice);
+	res.json(movies);
 });
 
 //Implements the Logs with Morgan in Express
