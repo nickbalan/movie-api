@@ -82,6 +82,12 @@ app.get('/movies', (req, res) => {
 	res.json(movies);
 });
 
+// Gets the data about a single movie, by title.
+app.get('/movies/:title', (req, res) => {
+  res.json(movies.find((movies) =>
+    { return movies.title === req.params.title }));
+});
+
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
