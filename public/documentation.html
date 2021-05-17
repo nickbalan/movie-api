@@ -7,5 +7,44 @@
 </head>
 <body>
 	<h1>Documentation</h1>
+    <p>
+    	Welcome to Movie API Documentation.
+    </p>
+    <div class="endpoint-table">
+         <h2>Description endpoints:</h2>
+         <table>
+             <thead>
+                 <tr>
+                     <th>Request</th>
+                     <th>URL</th>
+                     <th>Method</th>
+                     <th>Body data</th>
+                     <th>Response</th>
+                 </tr>
+             </thead>
+                <tr>
+                    <td>Display Welcome Page to the user.</td>
+                    <td>/</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A text message welcoming the user. Structured like:<br><a href="/">example</a></td>
+                </tr>
+                <tr>
+                    <td>Get list movies</td>
+                    <td>/movies</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>JSON object contains data (id, title, director, rating) about all the movies. Structured like:<br><a href="/movies">example</a></td>
+                </tr>
+                <tr>
+                    <td>Get list movies by title.</td>
+                    <td>/movies/[TITLE]</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (id, title, director, rating) about the movie of chose. Structured like: <br> <a href="/movies/Endgame">example</a> </td>
+                </tr>
+         </table>
+
+     </div>
 </body>
 </html>
