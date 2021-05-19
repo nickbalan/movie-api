@@ -88,6 +88,12 @@ app.get('/movies/:title', (req, res) => {
     { return movies.title === req.params.title }));
 });
 
+//Error-handling after the last endpoint
+app.use((err, req, res, next) => {
+	console.error(err.stack);
+	res.status(500).send('Error!')
+});
+
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
@@ -98,11 +104,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 app.use(methodOverride());
-
-app.use((err, req, res, next) => {
-	console.error(err.stack);
-	res.status(500).send('Error!')
-});
 
 //Listens for requests on port 8080
 app.listen(8080, () => {
