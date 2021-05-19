@@ -88,6 +88,20 @@ app.get('/movies/:title', (req, res) => {
     { return movies.title === req.params.title }));
 });
 
+// Adds data for a new movie to the list of movies.
+app.post('/movies', (req, res) => {
+  let newMovie = req.body;
+
+  if (!newMovie.title) {
+    const message = 'Missing name in request body';
+    res.status(400).send(message);
+  } else {
+    newMovie.id = uuid.v4();
+    movies.push(newMovie);
+    res.status(201).send(newMovie);
+  }
+});
+
 //Error-handling after the last endpoint
 app.use((err, req, res, next) => {
 	console.error(err.stack);
