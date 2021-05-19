@@ -103,12 +103,12 @@ app.post('/movies', (req, res) => {
 });
 
 // Deletes a movie from the list by ID.
-app.delete('/movies/:id', (req, res) => {
-  let movie = movies.find((movie) => { return movie.id === req.params.id });
+app.delete('/movies/:title', (req, res) => {
+  let movie = movies.find((movie) => { return movie.title === req.params.title });
 
   if (movie) {
-    movies = movies.filter((obj) => { return obj.id !== req.params.id });
-    res.status(201).send('Movie ' + req.params.id + ' was deleted.');
+    movies = movies.filter((obj) => { return obj.title !== req.params.title });
+    res.status(201).send('Movie ' + req.params.title + ' was deleted.');
   }
 });
 
