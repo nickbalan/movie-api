@@ -102,6 +102,16 @@ app.post('/movies', (req, res) => {
   }
 });
 
+// Deletes a movie from the list by ID.
+app.delete('/movies/:id', (req, res) => {
+  let movie = movies.find((movie) => { return movie.id === req.params.id });
+
+  if (movie) {
+    movies = movies.filter((obj) => { return obj.id !== req.params.id });
+    res.status(201).send('Movie ' + req.params.id + ' was deleted.');
+  }
+});
+
 //Error-handling after the last endpoint
 app.use((err, req, res, next) => {
 	console.error(err.stack);
