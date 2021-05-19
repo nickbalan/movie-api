@@ -112,6 +112,18 @@ app.delete('/movies/:id', (req, res) => {
   }
 });
 
+// Updates the "rating" of a movie by the name/rating.
+app.put('/students/:title/:rating', (req, res) => {
+  let movie = movies.find((movie) => { return movie.title === req.params.title });
+
+  if (movie) {
+    movie.ratings[req.params.rating] = parseInt(req.params.stars);
+    res.status(201).send('Movie ' + req.params.title + ' was assigned a rating ' + req.params.rating + ' of ' + req.params.stars);
+  } else {
+    res.status(404).send('Movie with the name ' + req.params.title + ' was not found.');
+  }
+});
+
 //Error-handling after the last endpoint
 app.use((err, req, res, next) => {
 	console.error(err.stack);
