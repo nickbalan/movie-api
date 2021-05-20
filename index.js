@@ -93,7 +93,7 @@ app.post('/movies', (req, res) => {
   let newMovie = req.body;
 
   if (!newMovie.title) {
-    const message = 'Missing name in request body';
+    const message = 'Missing title in request body';
     res.status(400).send(message);
   } else {
     newMovie.id = uuid.v4();
@@ -113,12 +113,12 @@ app.delete('/movies/:title', (req, res) => {
 });
 
 // Updates the "rating" of a movie by the name/rating.
-app.put('/students/:title/:rating', (req, res) => {
+app.put('/students/:title/', (req, res) => {
   let movie = movies.find((movie) => { return movie.title === req.params.title });
 
   if (movie) {
-    movie.ratings[req.params.rating] = parseInt(req.params.stars);
-    res.status(201).send('Movie ' + req.params.title + ' was assigned a rating ' + req.params.rating + ' of ' + req.params.stars);
+    movie.ratings[req.params.title] = parseInt(req.params.ratings);
+    res.status(201).send('Movie ' + req.params.title + ' was assigned a rating ' + req.params.ratings);
   } else {
     res.status(404).send('Movie with the name ' + req.params.title + ' was not found.');
   }
