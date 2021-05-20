@@ -30,18 +30,25 @@
                     <td>A text message welcoming the user. Structured like:<br><a href="/">example</a></td>
                 </tr>
                 <tr>
-                    <td>Get list movies</td>
+                    <td>Get the list of movies</td>
                     <td>/movies</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>JSON object contains data (id, title, director, rating) about all the movies. Structured like:<br><a href="/movies">example</a></td>
                 </tr>
                 <tr>
-                    <td>Get list movies by title.</td>
+                    <td>Get the list movies by title.</td>
                     <td>/movies/[TITLE]</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object contains data (id, title, director, rating) about the movie of chose. Structured like: <br> <a href="/movies/Endgame">example</a> </td>
+                </tr>
+                <tr>
+                    <td>Detele a movie by title.</td>
+                    <td>/movies/[TITLE]</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A text message: "Movie [TITLE] was deleted."</td>
                 </tr>
          </table>
 
