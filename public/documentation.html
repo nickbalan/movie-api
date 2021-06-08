@@ -27,31 +27,100 @@
                     <td>/</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A text message welcoming the user. Structured like:<br><a href="/">example</a></td>
+                    <td>A text message welcoming the user</td>
                 </tr>
                 <tr>
-                    <td>Get the list of movies</td>
+                    <td>Get the list of all movies</td>
                     <td>/movies</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>JSON object contains data (id, title, director, rating) about all the movies. Structured like:<br><a href="/movies">example</a></td>
+                    <td>JSON object contains data (id, ratings, title, genre, director) about all movie. <br> Structured like: <a href="/movies">example</a></td>
                 </tr>
                 <tr>
                     <td>Get the list movies by title.</td>
-                    <td>/movies/[TITLE]</td>
+                    <td>/movies/:title</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (id, title, director, rating) about the movie of chose. Structured like: <br> <a href="/movies/Endgame">example</a> </td>
+                    <td>A JSON object contains data (id, ratings, title, genre, director) about the movie of chose. <br> Structured like: <a href="/movies/Hi,%20Mom">example</a></td>
                 </tr>
                 <tr>
-                    <td>Detele a movie by title.</td>
-                    <td>/movies/[TITLE]</td>
+                    <td>Gets the data about all genres</td>
+                    <td>/genres</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A text message: "Movie [TITLE] was deleted."</td>
+                    <td>A JSON object contains data (id, ratings, title, genre, director) about the movie of chose. <br> Structured like: <a href="/genres">example</a></td>
+                </tr>
+                <tr>
+                    <td>Gets the data about a genre (description), by name</td>
+                    <td>/genres/:name</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (name, description) about the movie of chose. <br> Structured like: <a href="/genres/Comedy">example</a></td>
+                </tr>
+                <tr>
+                    <td>Gets the data about all directors.</td>
+                    <td>/directors</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (name, bio, birthYear, deathYear) about all directors. <br> Structured like: <a href="/directors">example</a></td>
+                </tr>
+                <tr>
+                    <td>Gets the data about a single director, by name</td>
+                    <td>/directors/:name</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (name, bio, birthYear, deathYear) about a single director, by name. <br> Structured like: <a href="/directors/Adam%20Wingard">example</a></td>
+                </tr>
+                 <tr>
+                    <td>Gets the data about all users</td>
+                    <td>/users</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (username, password, favorites) about all users. <br> Structured like: <a href="/users">example</a></td>
+                </tr>
+                <tr>
+                    <td>Gets the data about a single user, by username</td>
+                    <td>/users/:username</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object contains data (username, password, favorites) about a single user, by username. <br> Structured like: <a href="/users/User1">example</a></td>
+                </tr>
+                <tr>
+                    <td>Adds a new user to the list of Users</td>
+                    <td>/users</td>
+                    <td>POST</td>
+                    <td>A JSON object contains data (username, password, favorites), about a single user that was added, but no ID necessary. <br> Structured like: <a href="/users/User1">example</td>
+                    <td>A JSON object contains data (username, password, favorites, id), about a single user that was added, includins an ID. <br> Structured like: <a href="public/endpoints_ex/post_user.json">example</a></td>
+                </tr>
+                <tr>
+                    <td>Deletes a user from the list of Users, by username</td>
+                    <td>/users/:username</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>A text message indicating that a user has been removed from the list of users</td>
+                </tr>
+                <tr>
+                    <td>Updates username from the list of Users</td>
+                    <td>/users/:username</td>
+                    <td>PUT</td>
+                    <td>None</td>
+                    <td>A text message indicating that the user has been updated</td>
+                </tr>
+                <tr>
+                    <td>Adds the favorite movies to the list of favorites</td>
+                    <td>/users/:username/add-favorites</td>
+                    <td>POST</td>
+                    <td>None</td>
+                    <td>A text message indicating that a favorite movie has been added to the list of favorites</td>
+                </tr>
+                <tr>
+                    <td>Adds the favorite movies to the list of favorites</td>
+                    <td>/users/:username/remove-favorites</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td>A text message indicating that a favorite movie has been deleted to the list of favorites</td>
                 </tr>
          </table>
-
      </div>
 </body>
 </html>
