@@ -22,34 +22,34 @@ let movies = [
 		id: 1,
 		ratings: 7,
 		title:'Hi, Mom',
-		genre: {
-			'g1': 'Comedy', 
-			'g2': 'Drama', 
-			'g3': 'Fantasy'
-		},
+		genre : [
+			'Comedy', 
+			'Drama', 
+			'Fantasy'
+		],
 		director: 'Jia Ling'
 	},
 	{
 		id: 2,
 		ratings: 6,
 		title:'Detective Chinatown 3',
-		genre: { 
-			'g1': 'Action', 
-			'g2': 'Adventure', 
-		  'g3': 'Comedy', 
-			'g4': 'Mystery'
-		},
+		genre: [ 
+			'Action',
+			'Adventure',
+			'Comedy',
+			'Mystery'
+		],
 		director: 'Sicheng Chen'
 	},
 	{
 		id: 3,
 		ratings: 7,
 		title:'Godzilla vs. Kong',
-		genre: {
-			'g1': 'Action', 
-			'g2': 'Sci-Fi', 
-			'g3': 'Thriller'
-		},
+		genre: [
+			'Action', 
+			'Sci-Fi', 
+			'Thriller'
+		],
 		director: 'Adam Wingard'
 	},
 	{
