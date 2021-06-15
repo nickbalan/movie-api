@@ -4,6 +4,16 @@ const express = require('express');
 	bodyParser = require('body-parser');
 	methodOverride = require('method-override');
 	uuid = require('uuid');
+	//Integrating Mongoose with a REST API
+	mongoose = require('mongoose');
+	Models = require('./models.js');
+	movies = Models.Movie;
+	users = Models.User;
+	director = Models.Director;
+	genre = Models.Genre;
+
+//Connect Mongoose to the local database
+mongoose.connect('mongodb://localhost:127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true};
 
 	//Implements the Logs with Morgan in Express
 app.use(morgan('common'));
