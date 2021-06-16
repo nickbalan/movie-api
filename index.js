@@ -7,13 +7,14 @@ const express = require('express');
 	//Integrating Mongoose with a REST API
 	mongoose = require('mongoose');
 	Models = require('./models.js');
-	movies = Models.Movie;
-	users = Models.User;
-	director = Models.Director;
-	genre = Models.Genre;
+
+	movie = Models.movie;
+	user = Models.user;
+	director = Models.director;
+	genre = Models.genre;
 
 //Connect Mongoose to the local database
-mongoose.connect('mongodb://localhost:127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true};
+mongoose.connect('mongodb://127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 	//Implements the Logs with Morgan in Express
 app.use(morgan('common'));
