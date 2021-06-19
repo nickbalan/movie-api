@@ -212,35 +212,74 @@ app.use('/documentation', express.static('public'));
 
 /* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021) */
 app.get('/movies', (req, res) => {
-	res.json(movies);
+	movie.find()
+		.then((movies) => {
+			res.status(201).json(movies);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send('Error: ' + err);
+		});
 });
 
 // Gets the data about a single movie, by title.
-app.get('/movies/:title', (req, res) => {
-  let movie = res.json(movies.find((movie) =>
-    { return movie.title === req.params.title}));
+app.get('/movies/:Title', (req, res) => {
+  movie.findOne({Title: req.params.Title})
+  	.then((movie) => { 
+  		res.status(201).json(movie);
+  		})
+  	.catch((err) => {
+  		console.error(err);
+  		res.status(500).send('Error: ' + err);
+  });
 });
 
 // Gets the data about all genres.
 app.get('/genres', (req, res) => {
-	res.json(genres);
+	genre.find()
+		.then((genres) => {
+			res.status(201).json(genres);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send('Error: ' + err);
+		});
 });
 
 // Gets the data about genre (description), by name.
-app.get('/genres/:name', (req, res) => {
-  let genre = res.json(genres.find((genre) =>
-    { return genre.name === req.params.name}));
+app.get('/genres/:Name', (req, res) => {
+  	genre.findOne({Name: req.params.Name})
+		.then((genre) => {
+			res.status(201).json(genre);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send('Error: ' + err);
+		});
 });
 
 // Gets the data about all directores.
 app.get('/directors', (req, res) => {
-	res.json(directors);
+	director.find()
+		.then((directors) => {
+			res.status(201).json(directors);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send('Error: ' + err);
+		});
 });
 
 // Gets the data about a single director, by name.
-app.get('/directors/:name', (req, res) => {
-let director = res.json(directors.find((director) =>
-    { return director.name === req.params.name}));
+app.get('/directors/:Name', (req, res) => {
+	director.findOne({Name: req.params.Name})
+		.then((director) => {
+			res.status(201).json(director);
+		})
+		.catch((err) => {
+			console.error(err);
+			res.status(500).send('Error: ' + err);
+		});
 });
 
 // Gets the data about all users.
