@@ -83,14 +83,14 @@
                     <td>/users/:username</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about a single user, by username. <br> Structured like: <a href="/users/user2">example</a></td>
+                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about a single user, by username. <br> Structured like: <a href="/users/user1">example</a></td>
                 </tr>
                 <tr>
                     <td>Adds a new user to the list of Users</td>
                     <td>/users</td>
                     <td>POST</td>
                     <td>A JSON object contains data (Username, Password, Email, Birthday), about a single user that was added, but no ID necessary.</td>
-                    <td>A JSON object contains data (Username, Password, Email, Birthday, _id), about a single user that was added, includins an ID. </td>
+                    <td>A JSON object contains data (FavoriteMovies, Username, Password, Email, Birthday), about a single user that was added, includins an ID. </td>
                 </tr>
                 <tr>
                     <td>Deletes a user from the list of Users, by username</td>
@@ -104,18 +104,18 @@
                     <td>/users/:username</td>
                     <td>PUT</td>
                     <td>A JSON object contains the updated data (Username, Password, Email, Birthday), about one user, but no ID necessary.</td>
-                    <td>A JSON object contains the updated data (Username, Password, Email, Birthday, _id), about one user, includins an ID. </td>
+                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, includins an ID. </td>
                 </tr>
                 <tr>
                     <td>Adds the favorite movies to the list of favorites</td>
-                    <td>/users/:username/add-favorites</td>
-                    <td>POST</td>
+                    <td>/users/:username/add-favorites/:_id</td>
+                    <td>PUT</td>
                     <td>None</td>
-                    <td>A text message indicating that a favorite movie has been added to the list of favorites</td>
+                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, including the ID from the Movies in FavoriteMovies.</td>
                 </tr>
                 <tr>
-                    <td>Adds the favorite movies to the list of favorites</td>
-                    <td>/users/:username/remove-favorites</td>
+                    <td>Deletes the favorite movies to the list of favorites</td>
+                    <td>/users/:username/remove-favorites/:_id</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td>A text message indicating that a favorite movie has been deleted to the list of favorites</td>
