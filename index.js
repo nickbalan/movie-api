@@ -1,21 +1,22 @@
 const express = require('express');
-	morgan = require('morgan');
-	app = express();
-	bodyParser = require('body-parser');
-	methodOverride = require('method-override');
-	uuid = require('uuid');
+const morgan = require('morgan');
+const	app = express();
+const	bodyParser = require('body-parser');
+const	methodOverride = require('method-override');
+const	uuid = require('uuid');
+	
 	//Integrating Mongoose with a REST API
-	mongoose = require('mongoose');
-	Models = require('./models.js');
-
-//Integrationg Passport module
+const	mongoose = require('mongoose');
+const	Models = require('./models.js');
+	
+	//Integrationg Passport module
 const passport = require('passport');
 	require('./passport');
-
-	movie = Models.movie;
-	user = Models.user;
-	director = Models.director;
-	genre = Models.genre;
+	
+const	movie = Models.movie;
+const	user = Models.user;
+const	director = Models.director;
+const genre = Models.genre;
 
 //Connect Mongoose to the local database
 mongoose.connect('mongodb://127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -137,7 +138,7 @@ app.get('/users/:Username', passport.authenticate('jwt', {session: false}), (req
 });
 
 // Adds a new user to the list of Users.
-app.post('/users', passport.authenticate('jwt', {session: false}), (req, res) => {
+app.post('/users', (req, res) => {
   user.findOne({Username: req.params.Username})
 		.then((users) => {
 			if (users) {
