@@ -34,7 +34,7 @@ let user = mongoose.model('user', userSchema);
 let director = mongoose.model('director', directorSchema);
 let genre = mongoose.model('genre', genreSchema);
 
-module.exports.movie = movie;
-module.exports.user= user;
-module.exports.director = director;
-module.exports.genre = genre;
+module.exports.Movie = movie;
+module.exports.User= user;
+module.exports.Director = director;
+module.exports.Genre = genre;

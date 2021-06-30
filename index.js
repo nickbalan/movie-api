@@ -5,23 +5,25 @@ const	bodyParser = require('body-parser');
 const	methodOverride = require('method-override');
 const	uuid = require('uuid');
 	
-	//Integrating Mongoose with a REST API
+//Integrating Mongoose with a REST API
 const	mongoose = require('mongoose');
 const	Models = require('./models.js');
-	
-	//Integrationg Passport module
+
+let auth = require('./auth')(app);
+
+//Integrationg Passport module
 const passport = require('passport');
-	require('./passport');
-	
-const	movie = Models.movie;
-const	user = Models.user;
-const	director = Models.director;
-const genre = Models.genre;
+require('./passport');
+
+const	movie = Models.Movie;
+const	user = Models.User;
+const	director = Models.Director;
+const genre = Models.Genre;
 
 //Connect Mongoose to the local database
 mongoose.connect('mongodb://127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
-	//Implements the Logs with Morgan in Express
+//Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
 //Implements Error Handling in Express
@@ -31,13 +33,12 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-let auth = require('./auth')(app);
-
 app.use(methodOverride());
 
 
+
 // Adds a GET route located at the endpoint “/” that returns a default textual response
-app.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+app.get('/', (req, res) => {
 	res.send('Welcome to the movies-API');
 });
 
