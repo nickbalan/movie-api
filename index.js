@@ -115,7 +115,7 @@ app.get('/directors/:Name', passport.authenticate('jwt', {session: false}), (req
 });
 
 // Gets the data about all users.
-app.get('/users', passport.authenticate('jwt', {session: false}), (req, res) => {
+app.get('/users', (req, res) => {
 		user.find()
 		.then((users) => {
 			res.status(201).json(users);
@@ -140,7 +140,7 @@ app.get('/users/:Username', passport.authenticate('jwt', {session: false}), (req
 
 // Adds a new user to the list of Users.
 app.post('/users', (req, res) => {
-  user.findOne({Username: req.params.Username})
+  user.findOne({Username: req.body.Username})
 		.then((users) => {
 			if (users) {
 				return res.status(400).send(req.body.Username + ' already exists')
