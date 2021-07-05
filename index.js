@@ -5,15 +5,17 @@ const	bodyParser = require('body-parser');
 const	methodOverride = require('method-override');
 const	uuid = require('uuid');
 	
-//Integrating Mongoose with a REST API
+//Integrating Mongoose
 const	mongoose = require('mongoose');
 const	Models = require('./models.js');
+
+//Integrating CORS
+const cors =require('cors');
 
 let auth = require('./auth')(app);
 
 //Integrationg Passport module
 const passport = require('passport');
-require('./passport');
 
 const	movie = Models.Movie;
 const	user = Models.User;
@@ -25,6 +27,10 @@ mongoose.connect('mongodb://127.0.0.1:27017/myFlixDB', {useNewUrlParser: true, u
 
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
+
+require('./passport');
+
+app.use(cors());
 
 //Implements Error Handling in Express
 app.use(bodyParser.urlencoded({
@@ -114,30 +120,6 @@ app.get('/directors/:Name', passport.authenticate('jwt', {session: false}), (req
 		});
 });
 
-// Gets the data about all users.
-app.get('/users', (req, res) => {
-		user.find()
-		.then((users) => {
-			res.status(201).json(users);
-		})
-		.catch((error) => {
-			console.error(error);
-			res.status(500).send('Error: ' + error);
-		});
-});
-
-// Gets the data about a single user, by name.
-app.get('/users/:Username', passport.authenticate('jwt', {session: false}), (req, res) => {
-	user.findOne({Username: req.params.Username})
-		.then((user) => {
-			res.status(201).json(user);
-		})
-		.catch((error) => {
-			console.error(error);
-			res.status(500).send('Error: ' + error);
-		});
-});
-
 // Adds a new user to the list of Users.
 app.post('/users', (req, res) => {
   user.findOne({Username: req.body.Username})
@@ -163,6 +145,30 @@ app.post('/users', (req, res) => {
 		.catch((error) => {
 			console.error(error);
 			res.status(500).send('Error: ' + error);	
+		});
+});
+
+// Gets the data about all users.
+app.get('/users/all', passport.authenticate('jwt', {session: false}), (req, res) => {
+		user.find()
+		.then((users) => {
+			res.status(201).json(users);
+		})
+		.catch((error) => {
+			console.error(error);
+			res.status(500).send('Error: ' + error);
+		});
+});
+
+// Gets the data about a single user, by name.
+app.get('/users/:Username', passport.authenticate('jwt', {session: false}), (req, res) => {
+	user.findOne({Username: req.params.Username})
+		.then((user) => {
+			res.status(201).json(user);
+		})
+		.catch((error) => {
+			console.error(error);
+			res.status(500).send('Error: ' + error);
 		});
 });
 
