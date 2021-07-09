@@ -57,8 +57,9 @@ app.get('/', (req, res) => {
 	res.send('Welcome to the movies-API');
 });
 
-/* Implements an Express GET route located at the endpoint “/movies” that returns a JSON object containing data with Top 10 Worldwide Box Office (2021) */
-app.get('/movies', passport.authenticate('jwt', {session: false}), (req, res) => {
+/* Gets the data about all movies */
+app.get('/movies', //passport.authenticate('jwt', {session: false}), 
+	(req, res) => {
 	movie.find()
 		.then((movies) => {
 			res.status(201).json(movies);
