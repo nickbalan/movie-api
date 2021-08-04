@@ -41,6 +41,21 @@ require('./passport');
 //Implements CORS
 app.use(cors());
 
+//Allows access from origin
+let allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com/movies']
+
+app.use(cors({
+	origin: (origin, callback) => {
+		if (!origin) return callback(null, true);
+		if(allowedOrigins.indexOf(origin) === -1) {
+			// If a specific origin isn't found on the list of allowed origins
+			let message = 'The CORS policy for this application doesn\'t allow access from origin' + origin;
+			return callback(new error(messaage), false);
+		}
+		return callback(null, true);
+	}
+}));
+
 //Implements Error Handling in Express
 app.use(bodyParser.urlencoded({
 	extended: true
