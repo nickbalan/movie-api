@@ -42,7 +42,7 @@ require('./passport');
 app.use(cors());
 
 //Allows access from origin
-let allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com/movies']
+let allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com/']
 
 app.use(cors({
 	origin: (origin, callback) => {
