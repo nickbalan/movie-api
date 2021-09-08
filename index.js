@@ -30,18 +30,15 @@ const genre = Models.Genre;
 //Connects the API to the online database
 mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
-//Implements auth
-let auth = require('./auth')(app);
-
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
 require('./passport');
 
-//Implements CORS. Allows requests from all origins
-app.use(cors());
+/*//Implements CORS. Allows requests from all origins
+app.use(cors());*/
 
-/*//Allows access from origin. Implements CORS.
+//Allows access from origin. Implements CORS.
 const allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com']
 
 app.use(cors({
@@ -54,7 +51,10 @@ app.use(cors({
 		}
 		return callback(null, true);
 	}
-}));*/
+}));
+
+//Implements auth
+let auth = require('./auth')(app);
 
 //Implements Error Handling in Express
 app.use(bodyParser.urlencoded({
