@@ -35,10 +35,10 @@ app.use(morgan('common'));
 
 require('./passport');
 
-/*//Allows access from all origins. Implements CORS.
-app.use(cors());*/
+//Allows access from all origins. Implements CORS.
+app.use(cors());
 
-//Allows access from predefined origins. Implements CORS.
+/*//Allows access from predefined origins. Implements CORS.
 const allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com']
 
 app.use(cors({
@@ -51,7 +51,7 @@ app.use(cors({
 		}
 		return callback(null, true);
 	}
-}));
+}));*/
 
 //Implements auth
 let auth = require('./auth')(app);
