@@ -14,6 +14,7 @@ const cors =require('cors');
 
 //Integrating Passport module
 const passport = require('passport');
+require('./passport');
 
 //Integrating Express Validator
 const {check, validationResult} = require('express-validator');
@@ -33,12 +34,10 @@ mongoose.connect(process.env.CONNECTION_URI, {useNewUrlParser: true, useUnifiedT
 //Implements the Logs with Morgan in Express
 app.use(morgan('common'));
 
-require('./passport');
+/*//Allows access from all origins. Implements CORS.
+app.use(cors());*/
 
-//Allows access from all origins. Implements CORS.
-app.use(cors());
-
-/*//Allows access from predefined origins. Implements CORS.
+//Allows access from predefined origins. Implements CORS.
 const allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com']
 
 app.use(cors({
@@ -51,7 +50,7 @@ app.use(cors({
 		}
 		return callback(null, true);
 	}
-}));*/
+}));
 
 //Implements auth
 let auth = require('./auth')(app);
