@@ -52,13 +52,13 @@ app.use(cors({
 	}
 }));*/
 
-//Implements auth
-let auth = require('./auth')(app);
-
 //Implements Error Handling in Express
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+//Imports auth.js file and ensures that Express is available in auth.js file
+let auth = require('./auth')(app);
 
 app.use(bodyParser.json());
 
