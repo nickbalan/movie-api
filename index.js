@@ -37,6 +37,12 @@ app.use(morgan('common'));
 //Allows access from all origins. Implements CORS.
 app.use(cors());
 
+//Implements the bodyParser middleware function
+app.use(bodyParser.json());
+
+//Imports auth.js file and ensures that Express is available in auth.js file
+let auth = require('./auth')(app);
+
 /*//Allows access from predefined origins. Implements CORS.
 const allowedOrigins = ['http://localhost:8080' 'http://localhost:1234', 'https://movies-api-21.herokuapp.com']
 
@@ -52,18 +58,7 @@ app.use(cors({
 	}
 }));*/
 
-//Implements Error Handling in Express
-app.use(bodyParser.urlencoded({
-	extended: true
-}));
-
-//Imports auth.js file and ensures that Express is available in auth.js file
-let auth = require('./auth')(app);
-
-app.use(bodyParser.json());
-
 app.use(methodOverride());
-
 
 
 // Adds a GET route located at the endpoint “/” that returns a default textual response
