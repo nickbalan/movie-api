@@ -310,7 +310,7 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
  * }  
  */
 // Adds the favorite movies to the list of favorites
-app.put('/users/:Username/add-movies/:_id', passport.authenticate('jwt', { session: false }), function (req, res) {
+app.post('/users/:Username/add-movies/:_id', passport.authenticate('jwt', { session: false }), function (req, res) {
 	user.findOneAndUpdate({ Username: req.params.Username }, {
 		$push: { FavoriteMovies: req.params._id }
 	},
