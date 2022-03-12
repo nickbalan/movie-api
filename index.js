@@ -269,7 +269,7 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), [
 		});
 });
 
-/* // Gets the data about all users.
+// Gets the data about all users.
 app.get('/users/all', passport.authenticate('jwt', { session: false }), (req, res) => {
 	user.find()
 		.then((users) => {
@@ -278,18 +278,6 @@ app.get('/users/all', passport.authenticate('jwt', { session: false }), (req, re
 		.catch((error) => {
 			console.error(error);
 			res.status(500).send('Error: ' + error);
-		});
-}); */
-
-// Gets all users data
-app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
-	user.find()
-		.then((users) => {
-			res.status(201).json(users);
-		})
-		.catch((error) => {
-			console.error(error);
-			res.status(400).send('Error: ' + error);
 		});
 });
 
