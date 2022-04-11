@@ -36,7 +36,7 @@ data in the database. These users will be able to use the myFlix application whe
 - The API must be a Node.js and Express application
 - The API must use REST architecture, with URL endpoints corresponding to the data operations listed above 
 - The API must use at least three middleware modules, such as the body-parser package for reading data from requests and morgan for logging
-- The API must use a "package.json" file. 
+- The API must use a "package.json" file 
 - The database must be built using MongoDB 
 - The business logic must be modeled with Mongoose
 - The API must provide movie information in JSON format
