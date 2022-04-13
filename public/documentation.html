@@ -23,7 +23,7 @@
                  </tr>
              </thead>
                 <tr>
-                    <td>Display Welcome Page to the user.</td>
+                    <td>Display Welcome Page to the user</td>
                     <td>/</td>
                     <td>GET</td>
                     <td>None</td>
@@ -34,63 +34,63 @@
                     <td>/movies</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>JSON object contains data (Genre, Director, _id, Title, Description, Featured, imgUrl) about all movie. <br> Structured like: <a href="/movies">example</a></td>
+                    <td>JSON object contains data (Genre, Director, _id, Title, Description, Featured, imgUrl) about all movie <br> Structured like: <a href="/movies">example</a></td>
                 </tr>
                 <tr>
-                    <td>Get the data about one movie by title.</td>
+                    <td>Get the data about one movie by title</td>
                     <td>/movies/:title</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (Genre, Director, _id, Title, Description, Featured, imgUrl) about one movie of chose. <br> Structured like: <a href="/movies/Hi,%20Mom">example</a></td>
+                    <td>A JSON object contains data (Genre, Director, _id, Title, Description, Featured, imgUrl) about one movie of chose <br> Structured like: <a href="/movies/Hi,%20Mom">example</a></td>
                 </tr>
                 <tr>
                     <td>Gets the list of all genres</td>
                     <td>/genres</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (_id, Name, Description) about the movie of chose. <br> Structured like: <a href="/genres">example</a></td>
+                    <td>A JSON object contains data (_id, Name, Description) about the movie of chose <br> Structured like: <a href="/genres">example</a></td>
                 </tr>
                 <tr>
                     <td>Gets the data about one genre by name</td>
                     <td>/genres/:name</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (_id, Name, Description) about the movie of chose. <br> Structured like: <a href="/genres/Comedy">example</a></td>
+                    <td>A JSON object contains data (_id, Name, Description) about the movie of chose <br> Structured like: <a href="/genres/Comedy">example</a></td>
                 </tr>
                 <tr>
-                    <td>Gets the list of all directors.</td>
+                    <td>Gets the list of all directors</td>
                     <td>/directors</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (_id, Name, Bio, Birth) about all directors. <br> Structured like: <a href="/directors">example</a></td>
+                    <td>A JSON object contains data (_id, Name, Bio, Birth) about all directors <br> Structured like: <a href="/directors">example</a></td>
                 </tr>
                 <tr>
                     <td>Gets the data about one director by name</td>
                     <td>/directors/:name</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (_id, Name, Bio, Birth) about a single director, by name. <br> Structured like: <a href="/directors/Adam%20Wingard">example</a></td>
+                    <td>A JSON object contains data (_id, Name, Bio, Birth) about a single director, by name <br> Structured like: <a href="/directors/Adam%20Wingard">example</a></td>
                 </tr>
                  <tr>
                     <td>Gets the list of all users</td>
                     <td>/users/all</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about all users. <br> Structured like: <a href="/users">example</a></td>
+                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about all users <br> Structured like: <a href="/users">example</a></td>
                 </tr>
                 <tr>
                     <td>Gets the data about one user by username</td>
                     <td>/users/:username</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about a single user, by username. <br> Structured like: <a href="/users/user1">example</a></td>
+                    <td>A JSON object contains data (FavoriteMovies, _id, Username, Password, Email, Birthday) about a single user, by username <br> Structured like: <a href="/users/user1">example</a></td>
                 </tr>
                 <tr>
                     <td>Adds a new user to the list of Users</td>
                     <td>/users</td>
                     <td>POST</td>
-                    <td>A JSON object contains data (Username, Password, Email, Birthday), about a single user that was added, but no ID necessary.</td>
-                    <td>A JSON object contains data (FavoriteMovies, Username, Password, Email, Birthday), about a single user that was added, includins an ID. </td>
+                    <td>A JSON object contains data (Username, Password, Email, Birthday), about a single user that was added, but no ID necessary</td>
+                    <td>A JSON object contains data (FavoriteMovies, Username, Password, Email, Birthday), about a single user that was added, includins an ID </td>
                 </tr>
                 <tr>
                     <td>Deletes a user from the list of Users, by username</td>
@@ -103,15 +103,15 @@
                     <td>Updates username from the list of Users</td>
                     <td>/users/:username</td>
                     <td>PUT</td>
-                    <td>A JSON object contains the updated data (Username, Password, Email, Birthday), about one user, but no ID necessary.</td>
-                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, includins an ID. </td>
+                    <td>A JSON object contains the updated data (Username, Password, Email, Birthday), about one user, but no ID necessary</td>
+                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, includins an ID </td>
                 </tr>
                 <tr>
                     <td>Adds the favorite movies to the list of favorites</td>
                     <td>/users/:username/add-favorites/:_id</td>
                     <td>PUT</td>
                     <td>None</td>
-                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, including the ID from the Movies in FavoriteMovies.</td>
+                    <td>A JSON object contains the updated data (FavoriteMovies, Username, Password, Email, Birthday), about one user, including the ID from the Movies in FavoriteMovies</td>
                 </tr>
                 <tr>
                     <td>Deletes the favorite movies to the list of favorites</td>
