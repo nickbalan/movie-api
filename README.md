@@ -3,6 +3,9 @@
 ## Objective
 To build the server-side component of a "movies" web application. The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up or sign in, update their data and create a list of their favorite movies.
 
+## Context
+It’s no longer enough for JavaScript developers to be alone skilled in Front-end development; it’s also essential for them to be able to interface with and even create their APIs. For this reason, I built a REST API for an application called “myFlix” that interacts with a database that stores data about different movies.
+
 ## My Role
 - Full-Stack Web Developer
 
