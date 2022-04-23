@@ -6,6 +6,9 @@ To build the server-side component of a "movies" web application. The web applic
 ## Context
 It’s no longer enough for JavaScript developers to be alone skilled in Front-end development; it’s also essential for them to be able to interface with and even create their APIs. For this reason, I built a REST API for an application called “myFlix” that interacts with a database that stores data about different movies.
 
+## Project Owner and Acknowledgement
+- CareerFoundry
+
 ## My Role
 - Full-Stack Web Developer
 
