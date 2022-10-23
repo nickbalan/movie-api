@@ -2,7 +2,7 @@
 
 ## Objective
 
-Build a server-side REST API to store data about movies, and use it as a Back-End for other projects. This REST API gives users data endpoints about different films, directors, and genres.
+Build a server-side REST API to store data about movies, and use it as a Back-End for other projects. This REST API gives users data endpoints with different films, directors, and genres.
 
 ## Context
 
