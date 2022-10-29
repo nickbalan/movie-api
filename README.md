@@ -8,13 +8,9 @@ Build a server-side REST API to store data about movies, and use it as a Back-En
 
 It’s no longer enough for JavaScript developers to be alone skilled in Front-end development; it’s also essential for them to be able to interface with and even create their APIs. For this reason, I built a REST API for an application called “myFlix” that interacts with a database that stores data about different movies.
 
-## Project Deliverables Acknowledgement
+## Project Owner, Management, and Acknowledgement
 
-- CareerFoundry (25.02.2021 - 17.03.2022)
-
-## Project Improvement Strategies
-
-- Nick Balan (18.03.2022 - Current)
+[CareerFoundry](https://careerfoundry.com/) (25.02.2021 - 17.03.2022)
 
 ## My Role
 
