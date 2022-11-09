@@ -1,4 +1,4 @@
-# REST API - MyFlix. Technical Case Study
+# Movie API. Technical Case Study
 
 ## Objective
 
@@ -6,7 +6,7 @@ Build a server-side REST API to store data about movies, and use it as a Back-En
 
 ## Context
 
-It’s no longer enough for JavaScript developers to be alone skilled in Front-end development; it’s also essential for them to be able to interface with and even create their APIs. For this reason, I built a REST API for an application called “myFlix” that interacts with a database that stores data about different movies.
+It’s no longer enough for JavaScript developers to be alone skilled in Front-end development; it’s also essential for them to be able to interface with and even create their APIs. For this reason, I built a REST API that interacts with a database that stores data about different movies.
 
 ## Project Owner, Management, and Acknowledgement
 
@@ -18,13 +18,11 @@ It’s no longer enough for JavaScript developers to be alone skilled in Front-e
 
 ## The 5 W's
 
-- Who? — My immediate users will be frontend developers who'll work on the client-side for the application based on what's been documented on the server side. The users of the myFlix application could also be movie enthusiasts who enjoy reading information about different movies
-- What? — The complete server-side of my web application, including the server, business logic, and business layers of the application. It will consist of a well-designed REST API and
-  architected database built using JavaScript, Node.js, Express, and MongoDB. The REST API is accessible via commonly used HTTP methods like GET and POST. Similar HTTP methods (CRUD) can be used to retrieve data from the database and store that data in a non-relational way
-- When? — Whenever users of myFlix are interacting with the application, the server-side of the application will be in use, processing their requests and performing operations against the
-  data in the database. These users will be able to use the myFlix application whenever they like to read information about different movies or update their user information, for instance, their list of "Favorite Movies"
-- Where? — The application is hosted online. The myFlix application itself is responsive and can therefore be used anywhere and on any device, giving all users the same experience
-- Why? — Movie enthusiasts want to be able to access information about different movies, directors, and genres. The server-side of the myFlix application will ensure they have access to this information, that their requests are processed, and that all necessary data is stored.
+- Who? — My immediate users will be frontend developers who'll work on the client-side for the application based on what's been documented on the server side. The users of the Movie API could also be movie enthusiasts who enjoy reading information about different movies
+- What? — The complete server-side API, including the server, business logic, and business layers of the application. It will consist of a well-designed REST API and architected database built using JavaScript, Node.js, Express, and MongoDB. The REST API is accessible via commonly used HTTP methods GET, PUT, POST, DELETE. Similar HTTP methods (CRUD) can be used to retrieve data from the database and store that data in a non-relational way
+- When? — Whenever users of Movie API are interacting with the application, the server-side of the application will be in use, processing their requests and performing operations against the data in the database. These users will be able to use the Movie API whenever they like to read information about different movies
+- Where? — The API is hosted online. The Movie API itself can be used anywhere and on any device, giving all users the same experience
+- Why? — Movie enthusiasts want to be able to access information about different movies, directors, and genres. The server-side of the Movie API will ensure they have access to this information, that their requests are processed, and that all necessary data is stored.
 
 ## User Stories
 
