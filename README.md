@@ -45,7 +45,7 @@ It’s no longer enough for JavaScript developers to be alone skilled in Front-e
 - The API must include data validation logic
 - The API must meet data security regulations
 - The API source code must be deployed to a publicly accessible platform like GitHub
-- The API must be deployed to Heroku
+- The API must be deployed to a cloud platform as a service (PaaS)
 - The API must provide JSDoc Documentation.
 
 ## Essential Features

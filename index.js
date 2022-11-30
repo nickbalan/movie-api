@@ -63,7 +63,7 @@ app.use(methodOverride());
 
 // Adds a GET route located at the endpoint “/” that returns a default textual response
 app.get('/', (req, res) => {
-	res.send('Welcome to the movies-API');
+	res.send('Welcome to the Movie API');
 });
 
 /**
