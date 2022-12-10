@@ -32,7 +32,7 @@ It’s no longer enough for JavaScript developers to be alone skilled in Front-e
 
 ## Technical Requirements & Solutions
 
-- The API must use Express.js -a Back-End web application framework for building RESTful APIs with Node.js
+- The API must use Express.js - a Back-End web application framework for building RESTful APIs with Node.js
 - The API must use REST architecture, with URL endpoints corresponding to the data operations listed above
 - The API must use at least three middleware modules, such as the body-parser package for reading data from requests and morgan for logging
 - The API must use a "package.json" file
