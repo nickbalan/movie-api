@@ -12,6 +12,10 @@ It’s no longer enough for JavaScript developers to be alone skilled in Front-e
 
 [CareerFoundry](https://careerfoundry.com/) (25.02.2021 - 17.03.2022)
 
+## Project Owner and improvements
+
+Nick Balan (18.03.2022 - now)
+
 ## My Role
 
 - Full-Stack Web Developer
